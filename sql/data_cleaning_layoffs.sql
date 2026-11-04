@@ -138,6 +138,10 @@ SET `date` = str_to_date(`date`, '%m/%d/%Y');
 ALTER TABLE layoffs_staging2
 MODIFY COLUMN `date` DATE;
 
+-- Change the 'percentage_laid_off' data type to decimals (before was text)
+ALTER TABLE layoffs_staging2
+MODIFY COLUMN percentage_laid_off DECIMAL(3,2);
+
 -- -----------------------------------------------------
 -- 3. Handle NULL and blank values
 -- -----------------------------------------------------
